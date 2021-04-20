@@ -1,0 +1,110 @@
+# Copyright (c) 2021 Data In Motion Consulting GmbH
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+-plugin.selenium: \
+	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
+		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
+		revision            = "${dependencies.selenium}";\
+		transitive          = false;\
+		name                = "Selenium Dependencies"
+
+
+## Vaadin All
+dependencies.selenium:\
+	biz.aQute.bnd:biz.aQute.bndlib:5.3.0,\
+	org.seleniumhq.selenium:selenium-api:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-java:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-edge-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-firefox-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-firefox-xpi-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-ie-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-opera-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-remote-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-safari-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-support:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-chromium-driver:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-json:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-devtools:4.0.0-beta-1,\
+	org.seleniumhq.selenium:selenium-http:4.0.0-beta-1,\
+	org.seleniumhq.selenium:jetty-repacked:7.6.1.1,\
+	org.seleniumhq.selenium:htmlunit-driver:2.47.1,\
+	com.sun.jna:jna:3.0.9,\
+	net.java.dev.jna:jna:3.3.0,\
+	net.java.dev.jna:platform:3.5.2,\
+	io.opentelemetry:opentelemetry-api:0.14.1,\
+	io.opentelemetry:opentelemetry-api-metrics:0.14.1-alpha,\
+	io.opentelemetry:opentelemetry-context:0.14.1,\
+	io.opentelemetry:opentelemetry-exporter-logging:0.14.1,\
+	io.opentelemetry:opentelemetry-sdk-common:0.14.1,\
+	io.opentelemetry:opentelemetry-sdk-trace:0.14.1,\
+	io.opentelemetry:opentelemetry-sdk:0.14.1,\
+	io.opentelemetry:opentelemetry-semconv:0.14.1,\
+	com.google.code.gson:gson:2.8.6,\
+	com.google.guava:guava:30.1-jre,\
+	com.google.guava:failureaccess:1.0.1,\
+	org.apache.commons:commons-exec:1.3,\
+	io.netty:netty-buffer:4.1.59.Final,\
+	io.netty:netty-codec:4.1.59.Final,\
+	io.netty:netty-codec-dns:4.1.59.Final,\
+	io.netty:netty-codec-haproxy:4.1.59.Final,\
+	io.netty:netty-codec-http:4.1.59.Final,\
+	io.netty:netty-codec-http2:4.1.59.Final,\
+	io.netty:netty-codec-memcache:4.1.59.Final,\
+	io.netty:netty-codec-mqtt:4.1.59.Final,\
+	io.netty:netty-codec-redis:4.1.59.Final,\
+	io.netty:netty-codec-smtp:4.1.59.Final,\
+	io.netty:netty-codec-socks:4.1.59.Final,\
+	io.netty:netty-codec-stomp:4.1.59.Final,\
+	io.netty:netty-codec-xml:4.1.59.Final,\
+	io.netty:netty-common:4.1.59.Final,\
+	io.netty:netty-dev-tools:4.1.59.Final,\
+	io.netty:netty-handler:4.1.59.Final,\
+	io.netty:netty-handler-proxy:4.1.59.Final,\
+	io.netty:netty-resolver:4.1.59.Final,\
+	io.netty:netty-resolver-dns:4.1.59.Final,\
+	io.netty:netty-transport:4.1.59.Final,\
+	io.netty:netty-transport-rxtx:4.1.59.Final,\
+	io.netty:netty-transport-sctp:4.1.59.Final,\
+	io.netty:netty-transport-udt:4.1.59.Final,\
+	io.netty:netty-example:4.1.59.Final,\
+	io.netty:netty-all:4.1.59.Final,\
+	io.netty:netty-transport-native-unix-common:4.1.59.Final,\
+	io.netty:netty-transport-native-unix-common:linux-x86_64:4.1.59.Final,\
+	io.netty:netty-transport-native-unix-common:osx-x86_64:4.1.59.Final,\
+	io.netty:netty-transport-native-epoll:4.1.59.Final,\
+	io.netty:netty-transport-native-epoll:linux-x86_64:4.1.59.Final,\
+	io.netty:netty-transport-native-kqueue:4.1.59.Final,\
+	org.asynchttpclient:async-http-client:2.12.2,\
+	org.asynchttpclient:async-http-client-netty-utils:2.12.2,\
+	com.typesafe.netty:netty-reactive-streams:2.0.5,\
+	org.reactivestreams:reactive-streams:1.0.3,\
+	net.bytebuddy:byte-buddy:1.10.19,\
+	org.apache.aries.spifly:org.apache.aries.spifly.dynamic.bundle:1.3.2,\
+	org.ow2.asm:asm:9.0,\
+	org.ow2.asm:asm-commons:9.0,\
+	org.ow2.asm:asm-util:9.0,\
+	org.ow2.asm:asm-tree:9.0,\
+	org.ow2.asm:asm-analysis:9.0,\
+	commons-logging:commons-logging:1.2,\
+	org.apache.servicemix.specs:org.apache.servicemix.specs.annotation-api-1.3:1.3_3,\
+	org.apache.servicemix.specs:org.apache.servicemix.specs.activation-api-1.1:2.9.0
+		
+	#io.netty:netty-resolver-dns-native-macos:4.1.59.Final
+	#io.netty:netty-resolver-dns-native-macos:osx-x86_64:4.1.59.Final
+	#io.netty:netty-transport-native-unix-common:linux-aarch_64:4.1.59.Final
+	#io.netty:netty-transport-native-epoll:linux-aarch_64:4.1.59.Final
+	#io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.59.Final

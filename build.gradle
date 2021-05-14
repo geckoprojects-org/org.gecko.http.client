@@ -22,12 +22,19 @@ tasks.named('wrapper') {
   jarFile = rootProject.file('.gradle-wrapper/gradle-wrapper.jar')
 }
 
-
 tasks.register('itest'){
   subprojects.each { sp ->
     sp.tasks.each { t -> 
       if(t.name ==~ "resolve\\.test(.*)?"){
         dependsOn t
+      }
+    }
+  }
+  subprojects.each { sp ->
+    sp.tasks.each { t ->
+      if(t.name == "testOSGi"){
+        t.enabled = false
+        t.dependsOn = []
       }
     }
   }
@@ -39,7 +46,6 @@ tasks.register('itest'){
     }
   }
 }
-
 
 task codeCoverageReport(type: JacocoReport) {
     dependsOn itest

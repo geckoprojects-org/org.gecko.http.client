@@ -24,4 +24,4 @@ header:
     - 'gradlew.bat'
     - 'settings.gradle'
  
-  comment: on-failure
+  comment: always

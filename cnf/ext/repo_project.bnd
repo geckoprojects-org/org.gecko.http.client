@@ -14,23 +14,20 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
--plugin.jacoco: \
+-plugin.selenium: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
 		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
-		revision            = "${dependencies.jacoco}";\
+		snapshotUrl			= "https://oss.sonatype.org/content/repositories/snapshots/";\
+		revision            = "${dependencies.http.client}";\
 		transitive          = false;\
-		name                = "jacoco Dependencies"
+		name                = "Project Dependencies"
 
 
-## Jacoco All
-dependencies.jacoco:\
-	org.jacoco:org.jacoco.agent:jar:runtime:0.8.6,\
-	org.jacoco:org.jacoco.agent:0.8.6,\
-	org.jacoco:org.jacoco.core:0.8.6
-	
-	
--plugin: aQute.bnd.repository.maven.provider.MavenBndRepository;\
-		index               ='ext/jacoco.mvn';\
-		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
-		transitive          = false;\
-		name                = "jacoco Dependenciesmvn"
+##  All Project Deps
+dependencies.http.client:\
+	biz.aQute:biz.aQute.gogo.commands.provider:1.7.0,\
+	org.osgi:org.osgi.test.junit5:0.11.0-SNAPSHOT,\
+	org.osgi:org.osgi.test.junit5.cm:0.11.0-SNAPSHOT,\
+	org.osgi:org.osgi.test.common:0.11.0-SNAPSHOT,\
+	org.osgi:org.osgi.test.assertj.framework:0.11.0-SNAPSHOT,\
+	org.osgi:org.osgi.test.assertj.promise:0.11.0-SNAPSHOT

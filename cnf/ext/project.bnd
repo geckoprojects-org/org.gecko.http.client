@@ -1,0 +1,7 @@
+project-postfix: http.client
+
+Bundle-DocURL: https://github.com/geckoprojects-org/org.geckoprojects.${project-postfix}
+Bundle-SCM: url=https://github.com/geckoprojects-org/org.geckoprojects.${project-postfix}, \
+	connection=scm:git:https://github.com/geckoprojects-org/org.geckoprojects.${project-postfix}.git, \
+	developerConnection=scm:git:git@github.com:geckoprojects-org/org.geckoprojects.${project-postfix}.git
+	

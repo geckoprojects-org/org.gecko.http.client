@@ -22,7 +22,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.net.CookieStore;
 
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.commons.annotation.Testable;
@@ -33,7 +32,6 @@ import org.osgi.test.junit5.service.ServiceExtension;
 
 @ExtendWith({ ConfigurationExtension.class, ServiceExtension.class, BundleContextExtension.class })
 @Testable
-@Nested
 public class CookieHandlerTest {
 
     @Test

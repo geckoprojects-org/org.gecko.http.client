@@ -14,9 +14,10 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-Bundle-Version:             1.0.0.${tstamp}
+project-postfix: http.client
 
--remoteworkspace        true
--runfw:                 org.apache.felix.framework
--runee:                 JavaSE-1.8
-
+Bundle-DocURL: https://github.com/geckoprojects-org/org.geckoprojects.${project-postfix}
+Bundle-SCM: url=https://github.com/geckoprojects-org/org.geckoprojects.${project-postfix}, \
+	connection=scm:git:https://github.com/geckoprojects-org/org.geckoprojects.${project-postfix}.git, \
+	developerConnection=scm:git:git@github.com:geckoprojects-org/org.geckoprojects.${project-postfix}.git
+	

@@ -10,8 +10,8 @@ repositories {
 
 sonarqube {
   properties {
-    property "sonar.projectName", "org.gecko.github.template"
-    property "sonar.projectKey", "geckoprojects-org_org.gecko.github.template"
+    property "sonar.projectName", "org.geckoprojects.http.client"
+    property "sonar.projectKey", "geckoprojects-org_org.geckoprojects.http.client"
     property "sonar.organization", "geckoprojects-org"
     property "sonar.host.url", "https://sonarcloud.io"
     property "sonar.coverage.jacoco.xmlReportPaths", "${rootDir}/build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
@@ -22,12 +22,19 @@ tasks.named('wrapper') {
   jarFile = rootProject.file('.gradle-wrapper/gradle-wrapper.jar')
 }
 
-
 tasks.register('itest'){
   subprojects.each { sp ->
     sp.tasks.each { t -> 
       if(t.name ==~ "resolve\\.test(.*)?"){
         dependsOn t
+      }
+    }
+  }
+  subprojects.each { sp ->
+    sp.tasks.each { t ->
+      if(t.name == "testOSGi"){
+        t.enabled = false
+        t.dependsOn = []
       }
     }
   }
@@ -39,7 +46,6 @@ tasks.register('itest'){
     }
   }
 }
-
 
 task codeCoverageReport(type: JacocoReport) {
     dependsOn itest
@@ -58,31 +64,7 @@ task codeCoverageReport(type: JacocoReport) {
     }
 }
 
-// always run the tests before generating the report
-//codeCoverageReport.dependsOn {
-//    subprojects*.testrun
-//}
-
 tasks.named("sonarqube") {
     dependsOn(codeCoverageReport)
 }
 
-
-
-
-//task generateMergedReport(type: JacocoReport) {
-// // dependsOn = subprojects.test
-//  additionalSourceDirs.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
-//  sourceDirectories.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
-//  classDirectories.setFrom files(subprojects.sourceSets.main.output)
-//  executionData.setFrom project.fileTree(dir: '.', include: '**/**/jacoco.exec')
-//  reports {
-//    xml.enabled true
-//    xml.destination file("${buildDir}/reports/jacoco/aggregate.xml")
-//    csv.enabled false
-//    html.enabled true
-//  }
-//}
-//testrun.finalizedBy jacocoTestReport
-
-// Make JaCoCo report generation part of the 'sonarqube' lifecycle phase

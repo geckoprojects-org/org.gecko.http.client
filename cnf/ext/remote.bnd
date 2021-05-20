@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Data In Motion Consulting GmbH
+# Copyright 2021 Data In Motion Consulting GmbH
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,14 +15,38 @@
 # SPDX-License-Identifier: Apache-2.0
 
 -include: \
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/gecko_defaults_baseline.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/gecko_defaults_build.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/gecko_defaults_header.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/gecko_defaults_release.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/gecko_defaults_run.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/felix.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/osgiR7.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/osgiR8.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/slf4j.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.gecko.bndincludes/main/osgitest_junit5.bnd
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_baseline.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_build.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_header.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_release.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_run.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/felix.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/osgiR7.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/osgiR8.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/slf4j.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/osgitest_junit5.bnd
+#	,\
+#	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/jacoco.bnd
+	
+-plugin.jacoco: \
+	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
+		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
+		revision            = "${dependencies.jacoco}";\
+		transitive          = false;\
+		name                = "jacoco Dependencies"
+
+
+## Jacoco Dependencies
+dependencies.jacoco:\
+	org.jacoco:org.jacoco.agent:jar:runtime:0.8.6,\
+	org.jacoco:org.jacoco.core:0.8.6
+
+## Runpath and vm args
+-runpath.jacoco:\
+	org.jacoco:org.jacoco.agent
+
+-runvm.coverage: -javaagent:${repo;org.jacoco:org.jacoco.agent}=destfile=${target-dir}/jacoco.exec
+
+## BndPomRepository could load g_a_v_c sind 6.0.0
+-require-bnd: "(version>=6.0.0)"
 	

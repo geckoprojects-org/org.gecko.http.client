@@ -14,9 +14,16 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-Bundle-Version:             1.0.0.${tstamp}
+Bundle-Version: 0.0.1.SNAPSHOT
 
--remoteworkspace        true
--runfw:                 org.apache.felix.framework
--runee:                 JavaSE-1.8
-
+Export-Package: \
+	org.geckoprojects.http.client.util*,\
+	org.geckoprojects.http.client
+-buildpath: \
+	org.osgi.service.component,\
+	org.osgi.service.metatype.annotations,\
+	org.osgi.service.component.annotations,\
+	org.osgi.framework,\
+	org.osgi.annotation.versioning
+-privatepackage: \
+	org.geckoprojects.http.client.impl*

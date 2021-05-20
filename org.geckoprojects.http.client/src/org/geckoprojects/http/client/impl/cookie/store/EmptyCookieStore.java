@@ -24,11 +24,13 @@ import java.net.URI;
 import java.util.Collections;
 import java.util.List;
 
+import org.geckoprojects.http.client.Constants;
+import org.geckoprojects.http.client.CookieStoreName;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
-@CookieStoreType("EMPTY")
-@Component(service = CookieStore.class, scope = ServiceScope.SINGLETON)
+@CookieStoreName("EMPTY")
+@Component(service = CookieStore.class, scope = ServiceScope.SINGLETON, configurationPid = Constants.PID_HTTP_CLIENT_COOKIE_STORE_EMPTY)
 public class EmptyCookieStore implements CookieStore {
 
     @Override

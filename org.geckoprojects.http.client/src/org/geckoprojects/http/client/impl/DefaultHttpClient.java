@@ -19,6 +19,7 @@ package org.geckoprojects.http.client.impl;
 
 import java.net.http.HttpClient;
 
+import org.geckoprojects.http.client.Constants;
 import org.geckoprojects.http.client.HttpClientName;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
@@ -26,7 +27,7 @@ import org.osgi.service.component.propertytypes.ServiceDescription;
 
 @HttpClientName(value = ".default")
 @ServiceDescription(DefaultHttpClient.DESCRIPTION)
-@Component(service = HttpClient.class, scope = ServiceScope.PROTOTYPE)
+@Component(service = HttpClient.class, scope = ServiceScope.PROTOTYPE, configurationPid = Constants.PID_HTTP_CLIENT_DEFAULT)
 public class DefaultHttpClient extends AbstractHttpClient {
 
     protected final static String DESCRIPTION = "The default java.net.http.HttpClient.";

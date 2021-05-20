@@ -20,11 +20,13 @@ package org.geckoprojects.http.client.impl.cookie.policy;
 
 import java.net.CookiePolicy;
 
+import org.geckoprojects.http.client.Constants;
+import org.geckoprojects.http.client.CookiePolicyName;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
-@CookiePolicyType("ALL")
-@Component(service = CookiePolicy.class, scope = ServiceScope.SINGLETON)
+@CookiePolicyName("ALL")
+@Component(service = CookiePolicy.class, scope = ServiceScope.SINGLETON, configurationPid = Constants.PID_HTTP_CLIENT_COOKIE_POLICY_ALL)
 public class AcceptAllCookiePolicy extends AbstractCookiePolicy {
 
     @Override

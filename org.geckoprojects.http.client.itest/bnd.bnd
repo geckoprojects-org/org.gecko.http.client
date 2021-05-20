@@ -60,8 +60,8 @@ Test-Cases: ${classes;HIERARCHY_INDIRECTLY_ANNOTATED;org.junit.platform.commons.
 	bnd.identity;id='junit-jupiter-engine',\
 	bnd.identity;id='junit-platform-launcher',\
 	bnd.identity;id='biz.aQute.tester.junit-platform',\
-	bnd.identity;id='org.gecko.util.http.client',\
-	bnd.identity;id='org.gecko.util.http.client.itest',\
+	bnd.identity;id='org.geckoprojects.util.http.client',\
+	bnd.identity;id='org.geckoprojects.util.http.client.itest',\
 	bnd.identity;id='org.apache.felix.gogo.command',\
 	bnd.identity;id='org.apache.felix.gogo.runtime',\
 	bnd.identity;id='org.apache.felix.gogo.jline'

@@ -15,8 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  *******************************************************************************/
-
-package org.geckoprojects.http.client.impl.cookie.policy;
+package org.geckoprojects.http.client;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -28,9 +27,9 @@ import org.osgi.service.component.annotations.ComponentPropertyType;
 @ComponentPropertyType
 @Retention(RetentionPolicy.CLASS)
 @Target(ElementType.TYPE)
-public @interface CookiePolicyType {
+public @interface CookieStoreName {
 
-    String PREFIX_ = "org.gecko.http.client.";
+    String PREFIX_ = "org.geckoprojects.http.client.";
 
     String value();
 }

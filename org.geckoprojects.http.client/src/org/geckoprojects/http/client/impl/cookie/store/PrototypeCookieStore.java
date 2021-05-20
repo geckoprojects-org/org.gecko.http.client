@@ -20,11 +20,13 @@ package org.geckoprojects.http.client.impl.cookie.store;
 
 import java.net.CookieStore;
 
+import org.geckoprojects.http.client.Constants;
+import org.geckoprojects.http.client.CookieStoreName;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
-@CookieStoreType("PROTOTYPE")
-@Component(service = CookieStore.class, scope = ServiceScope.PROTOTYPE)
+@CookieStoreName("PROTOTYPE")
+@Component(service = CookieStore.class, scope = ServiceScope.PROTOTYPE, configurationPid = Constants.PID_HTTP_CLIENT_COOKIE_STORE_PROTOTYPE)
 public class PrototypeCookieStore extends AbstractCookieStore {
 
 }

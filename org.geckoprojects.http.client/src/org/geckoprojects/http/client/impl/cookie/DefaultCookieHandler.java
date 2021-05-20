@@ -45,10 +45,10 @@ public class DefaultCookieHandler extends CookieHandler {
     public static @interface CookieHandlerConfig {
 
         @AttributeDefinition()
-        String cookiePolicy_target() default "(org.gecko.http.client.cookie.policy.type=ALL)";
+        String cookiePolicy_target() default "(org.geckoprojects.http.client.cookie.policy.name=ALL)";
 
         @AttributeDefinition()
-        String cookieStore_target() default "(org.gecko.http.client.cookie.store.type=PROTOTYPE)";
+        String cookieStore_target() default "(org.geckoprojects.http.client.cookie.store.name=PROTOTYPE)";
     }
 
     private CookieManager cookieManagerDelegate;

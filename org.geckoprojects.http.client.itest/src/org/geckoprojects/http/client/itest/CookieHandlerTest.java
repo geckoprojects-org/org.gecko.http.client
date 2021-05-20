@@ -38,7 +38,7 @@ public class CookieHandlerTest {
 
     @Test
     public void test_EMPTY(
-            @InjectService(timeout = 1000, filter = "(org.gecko.http.client.cookie.store.type=EMPTY)") CookieStore cookieStore) {
+            @InjectService(timeout = 1000, filter = "(org.geckoprojects.http.client.cookie.store.type=EMPTY)") CookieStore cookieStore) {
 
         assertThat(cookieStore).isNotNull();
 
@@ -46,7 +46,7 @@ public class CookieHandlerTest {
 
     @Test
     public void test_PROTOTYPE(
-            @InjectService(timeout = 1000, filter = "(org.gecko.http.client.cookie.store.type=PROTOTYPE)") CookieStore cookieStore) {
+            @InjectService(timeout = 1000, filter = "(org.geckoprojects.http.client.cookie.store.type=PROTOTYPE)") CookieStore cookieStore) {
 
         assertThat(cookieStore).isNotNull();
 
@@ -54,7 +54,7 @@ public class CookieHandlerTest {
 
     @Test
     public void test_Bundle(
-            @InjectService(timeout = 1000, filter = "(org.gecko.http.client.cookie.store.type=BUNDLE)") CookieStore cookieStore) {
+            @InjectService(timeout = 1000, filter = "(org.geckoprojects.http.client.cookie.store.type=BUNDLE)") CookieStore cookieStore) {
 
         assertThat(cookieStore).isNotNull();
 
@@ -62,7 +62,7 @@ public class CookieHandlerTest {
 
     @Test
     public void test_Singleton(
-            @InjectService(timeout = 1000, filter = "(org.gecko.http.client.cookie.store.type=SINGLETON)") CookieStore cookieStore) {
+            @InjectService(timeout = 1000, filter = "(org.geckoprojects.http.client.cookie.store.type=SINGLETON)") CookieStore cookieStore) {
 
         assertThat(cookieStore).isNotNull();
 

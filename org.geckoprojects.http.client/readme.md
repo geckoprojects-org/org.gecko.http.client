@@ -57,7 +57,7 @@ The default java.net.http.HttpClient.
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.DefaultHttpClient`
+##### Pid: `org.geckoprojects.http.client.default`
 
 No information available.
 
@@ -73,7 +73,7 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.DefaultHttpClient
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.DefaultHttpClient":{
+"org.geckoprojects.http.client.default":{
         //# Component properties
         /*
          * Type = String
@@ -120,7 +120,7 @@ Handles ServerAuthentication using the configured credentials, if the property `
 
 #### Configuration - *policy = require*
 
-##### Factory Pid: `org.gecko.http.client.auth.basic`
+##### Factory Pid: `org.geckoprojects.http.client.auth.basic`
 
 |Attribute |Value |
 |--- |--- |
@@ -172,7 +172,7 @@ Handles ServerAuthentication using the configured credentials, if the property `
  * Component: org.geckoprojects.http.client.impl.auth.BasicAuthenticator
  * policy:    require
  */
-"org.gecko.http.client.auth.basic~FactoryNameChangeIt":{
+"org.geckoprojects.http.client.auth.basic~FactoryNameChangeIt":{
         //# Component properties
         /*
          * Type = Boolean
@@ -246,11 +246,11 @@ Handles ServerAuthentication using the configured credentials, if the property `
 
 |Name |Type |Value |
 |--- |--- |--- |
-|org.gecko.http.client.cookie.store.type |String |"PROTOTYPE" |
+|org.geckoprojects.http.client.cookie.store.name |String |"PROTOTYPE" |
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.cookie.store.PrototypeCookieStore`
+##### Pid: `org.geckoprojects.http.client.cookie.store.prototype`
 
 No information available.
 
@@ -266,13 +266,13 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.cookie.store.PrototypeCookieStore
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.cookie.store.PrototypeCookieStore":{
+"org.geckoprojects.http.client.cookie.store.prototype":{
         //# Component properties
         /*
          * Type = String
          * Default = "PROTOTYPE"
          */
-         // "org.gecko.http.client.cookie.store.type": null,
+         // "org.geckoprojects.http.client.cookie.store.name": null,
 
 
         //# Reference bindings
@@ -305,7 +305,7 @@ The proxy selector that selects the proxy server to use, filtered by the matches
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.gecko.http.client.proxy.selector.default`
+##### Pid: `org.geckoprojects.http.client.proxy.selector.default`
 
 No information available.
 
@@ -329,7 +329,7 @@ No information available.
  * Component: org.geckoprojects.http.client.impl.proxy.DefaultProxySelector
  * policy:    optional
  */
-"org.gecko.http.client.proxy.selector.default":{
+"org.geckoprojects.http.client.proxy.selector.default":{
         //# Component properties
         /*
          * Type = String
@@ -372,7 +372,7 @@ No information available.
 
 #### Configuration - *policy = require*
 
-##### Factory Pid: `org.gecko.http.client.proxy.provider.default`
+##### Factory Pid: `org.geckoprojects.http.client.proxy.provider.default`
 
 |Attribute |Value |
 |--- |--- |
@@ -462,7 +462,7 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.proxy.DefaultUriProxyProvider
  * policy:    require
  */
-"org.gecko.http.client.proxy.provider.default~FactoryNameChangeIt":{
+"org.geckoprojects.http.client.proxy.provider.default~FactoryNameChangeIt":{
         //# Component properties
         /*
          * Type = String
@@ -608,7 +608,7 @@ The Custom-Configurable java.net.http.HttpClient.
 
 #### Configuration - *policy = require*
 
-##### Factory Pid: `org.gecko.http.client.custom`
+##### Factory Pid: `org.geckoprojects.http.client.custom`
 
 |Attribute |Value |
 |--- |--- |
@@ -681,7 +681,7 @@ The Custom-Configurable java.net.http.HttpClient.
  * Component: org.geckoprojects.http.client.impl.CustomHttpClient
  * policy:    require
  */
-"org.gecko.http.client.custom~FactoryNameChangeIt":{
+"org.geckoprojects.http.client.custom~FactoryNameChangeIt":{
         //# Component properties
         /*
          * Type = String
@@ -768,11 +768,11 @@ The Custom-Configurable java.net.http.HttpClient.
 
 |Name |Type |Value |
 |--- |--- |--- |
-|org.gecko.http.client.cookie.policy.type |String |"ORIGINAL_SERVER" |
+|org.geckoprojects.http.client.cookie.policy.name |String |"ORIGINAL_SERVER" |
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.cookie.policy.AcceptOriginServerCookiePolicy`
+##### Pid: `org.geckoprojects.http.client.cookie.policy.origin`
 
 No information available.
 
@@ -788,13 +788,13 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.cookie.policy.AcceptOriginServerCookiePolicy
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.cookie.policy.AcceptOriginServerCookiePolicy":{
+"org.geckoprojects.http.client.cookie.policy.origin":{
         //# Component properties
         /*
          * Type = String
          * Default = "ORIGINAL_SERVER"
          */
-         // "org.gecko.http.client.cookie.policy.type": null,
+         // "org.geckoprojects.http.client.cookie.policy.name": null,
 
 
         //# Reference bindings
@@ -821,11 +821,11 @@ No bindings.
 
 |Name |Type |Value |
 |--- |--- |--- |
-|org.gecko.http.client.cookie.store.type |String |"BUNDLE" |
+|org.geckoprojects.http.client.cookie.store.name |String |"BUNDLE" |
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.cookie.store.BundleCookieStore`
+##### Pid: `org.geckoprojects.http.client.cookie.store.bundle`
 
 No information available.
 
@@ -841,13 +841,13 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.cookie.store.BundleCookieStore
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.cookie.store.BundleCookieStore":{
+"org.geckoprojects.http.client.cookie.store.bundle":{
         //# Component properties
         /*
          * Type = String
          * Default = "BUNDLE"
          */
-         // "org.gecko.http.client.cookie.store.type": null,
+         // "org.geckoprojects.http.client.cookie.store.name": null,
 
 
         //# Reference bindings
@@ -874,11 +874,11 @@ No bindings.
 
 |Name |Type |Value |
 |--- |--- |--- |
-|org.gecko.http.client.cookie.store.type |String |"EMPTY" |
+|org.geckoprojects.http.client.cookie.store.name |String |"EMPTY" |
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.cookie.store.EmptyCookieStore`
+##### Pid: `org.geckoprojects.http.client.cookie.store.empty`
 
 No information available.
 
@@ -894,13 +894,13 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.cookie.store.EmptyCookieStore
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.cookie.store.EmptyCookieStore":{
+"org.geckoprojects.http.client.cookie.store.empty":{
         //# Component properties
         /*
          * Type = String
          * Default = "EMPTY"
          */
-         // "org.gecko.http.client.cookie.store.type": null,
+         // "org.geckoprojects.http.client.cookie.store.name": null,
 
 
         //# Reference bindings
@@ -929,21 +929,21 @@ No properties.
 
 #### Configuration - *policy = require*
 
-##### Factory Pid: `org.gecko.http.client.cookie.handler.default`
+##### Factory Pid: `org.geckoprojects.http.client.cookie.handler.default`
 
 |Attribute |Value |
 |--- |--- |
 |Id |`cookiePolicy.target` |
 |Required |**true** |
 |Type |**String** |
-|Default |"(org.gecko.http.client.cookie.policy.type=ALL)" |
+|Default |"(org.geckoprojects.http.client.cookie.policy.name=ALL)" |
 
 |Attribute |Value |
 |--- |--- |
 |Id |`cookieStore.target` |
 |Required |**true** |
 |Type |**String** |
-|Default |"(org.gecko.http.client.cookie.store.type=PROTOTYPE)" |
+|Default |"(org.geckoprojects.http.client.cookie.store.name=PROTOTYPE)" |
 
 #### Reference bindings
 
@@ -973,7 +973,7 @@ No properties.
  * Component: org.geckoprojects.http.client.impl.cookie.DefaultCookieHandler
  * policy:    require
  */
-"org.gecko.http.client.cookie.handler.default~FactoryNameChangeIt":{
+"org.geckoprojects.http.client.cookie.handler.default~FactoryNameChangeIt":{
         //# Component properties
         // none
 
@@ -986,14 +986,14 @@ No properties.
         /*
          * Required = true
          * Type = String
-         * Default = "(org.gecko.http.client.cookie.policy.type=ALL)"
+         * Default = "(org.geckoprojects.http.client.cookie.policy.name=ALL)"
          */
          "cookiePolicy.target": null,
 
         /*
          * Required = true
          * Type = String
-         * Default = "(org.gecko.http.client.cookie.store.type=PROTOTYPE)"
+         * Default = "(org.geckoprojects.http.client.cookie.store.name=PROTOTYPE)"
          */
          "cookieStore.target": null
 }
@@ -1015,11 +1015,11 @@ No properties.
 
 |Name |Type |Value |
 |--- |--- |--- |
-|org.gecko.http.client.cookie.policy.type |String |"ALL" |
+|org.geckoprojects.http.client.cookie.policy.name |String |"ALL" |
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.cookie.policy.AcceptAllCookiePolicy`
+##### Pid: `org.geckoprojects.http.client.cookie.policy.all`
 
 No information available.
 
@@ -1035,13 +1035,13 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.cookie.policy.AcceptAllCookiePolicy
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.cookie.policy.AcceptAllCookiePolicy":{
+"org.geckoprojects.http.client.cookie.policy.all":{
         //# Component properties
         /*
          * Type = String
          * Default = "ALL"
          */
-         // "org.gecko.http.client.cookie.policy.type": null,
+         // "org.geckoprojects.http.client.cookie.policy.name": null,
 
 
         //# Reference bindings
@@ -1068,11 +1068,11 @@ No bindings.
 
 |Name |Type |Value |
 |--- |--- |--- |
-|org.gecko.http.client.cookie.policy.type |String |"NONE" |
+|org.geckoprojects.http.client.cookie.policy.name |String |"NONE" |
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.cookie.policy.AcceptNoneCookiePolicy`
+##### Pid: `org.geckoprojects.http.client.cookie.policy.none`
 
 No information available.
 
@@ -1088,13 +1088,13 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.cookie.policy.AcceptNoneCookiePolicy
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.cookie.policy.AcceptNoneCookiePolicy":{
+"org.geckoprojects.http.client.cookie.policy.none":{
         //# Component properties
         /*
          * Type = String
          * Default = "NONE"
          */
-         // "org.gecko.http.client.cookie.policy.type": null,
+         // "org.geckoprojects.http.client.cookie.policy.name": null,
 
 
         //# Reference bindings
@@ -1121,11 +1121,11 @@ No bindings.
 
 |Name |Type |Value |
 |--- |--- |--- |
-|org.gecko.http.client.cookie.store.type |String |"SINGLETON" |
+|org.geckoprojects.http.client.cookie.store.name |String |"SINGLETON" |
 
 #### Configuration - *policy = optional*
 
-##### Pid: `org.geckoprojects.http.client.impl.cookie.store.SingletonCookieStore`
+##### Pid: `org.geckoprojects.http.client.cookie.store.singleton`
 
 No information available.
 
@@ -1141,13 +1141,13 @@ No bindings.
  * Component: org.geckoprojects.http.client.impl.cookie.store.SingletonCookieStore
  * policy:    optional
  */
-"org.geckoprojects.http.client.impl.cookie.store.SingletonCookieStore":{
+"org.geckoprojects.http.client.cookie.store.singleton":{
         //# Component properties
         /*
          * Type = String
          * Default = "SINGLETON"
          */
-         // "org.gecko.http.client.cookie.store.type": null,
+         // "org.geckoprojects.http.client.cookie.store.name": null,
 
 
         //# Reference bindings
